@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import CountryList from './CountryList'
-import CountryFilter from './CountryFilter'
+import { CountryList, CountryFilter } from '../components'
 
 function App() {
   const [filter, setFilter] = useState('');
