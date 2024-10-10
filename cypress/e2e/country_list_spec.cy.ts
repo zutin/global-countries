@@ -2,7 +2,7 @@ describe('Country List', () => {
   it('successfully returns country list', () => {
     cy.intercept('POST', 'https://countries.trevorblades.com/graphql').as('getCountries')
 
-    cy.visit('http://localhost:5173')
+    cy.visit('/')
     cy.contains('Loading...').should('be.visible')
     cy.wait('@getCountries').its('response.statusCode').should('eq', 200)
     cy.contains('Loading...').should('not.exist')
@@ -15,7 +15,7 @@ describe('Country List', () => {
   it('filters country list by country name', () => {
     cy.intercept('POST', 'https://countries.trevorblades.com/graphql').as('getCountries')
 
-    cy.visit('http://localhost:5173')
+    cy.visit('/')
     cy.wait('@getCountries').its('response.statusCode').should('eq', 200)
     cy.contains('Brazil').should('be.visible')
     cy.contains('Canada').should('be.visible')
@@ -30,7 +30,7 @@ describe('Country List', () => {
   it('filters country list by capital name', () => {
     cy.intercept('POST', 'https://countries.trevorblades.com/graphql').as('getCountries')
 
-    cy.visit('http://localhost:5173')
+    cy.visit('/')
     cy.wait('@getCountries').its('response.statusCode').should('eq', 200)
     cy.contains('Brazil').should('be.visible')
     cy.contains('Germany').should('be.visible')

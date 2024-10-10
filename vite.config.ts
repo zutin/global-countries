@@ -11,4 +11,7 @@ export default defineConfig({
       plugins: [tailwindcss(), autoprefixer()]
     },
   },
+  server: {
+    port: 3000,
+  },
 })
