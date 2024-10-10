@@ -20,11 +20,11 @@ function DisplayCountries() {
   if (error) return <p className='text-xl'>Error :(</p>;
 
   return data.countries.map(({ emoji, name, capital, languages }: any) => (
-    <div key={name} className='p-3 bg-gray-500/10 w-80 h-auto rounded-lg'>
+    <div key={name} className='p-3 bg-gray-500/10 w-80 h-56 rounded-lg content-center'>
       <p className='text-5xl'>{emoji}</p>
       <p className='text-lg font-semibold'>{name}</p>
       <p className='text-sm text-gray-400'>{capital}</p>
-      <p className='mt-2 font-medium'>Languages spoken:</p>
+      { languages.length > 0 ? <p className='mt-2 font-medium'>Languages spoken:</p> : ''}
       <p>{languages.map(({ name }: any) => name).join(', ')}</p>
     </div>
   ));
