@@ -16,22 +16,16 @@ const GET_COUNTRIES = gql`
 function DisplayCountries() {
   const { loading, error, data } = useQuery(GET_COUNTRIES);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <p className='text-xl'>Loading...</p>;
+  if (error) return <p className='text-xl'>Error :(</p>;
 
   return data.countries.map(({ emoji, name, capital, languages }: any) => (
-    <div key={name}>
-      <h3>{emoji} - {name}</h3>
-      <br/>
-      <b>About this country:</b>
-      <p>{name} capital city is {capital}</p>
-      <br/>
-      <b>Languages spoken:</b>
-      <ul>
-        {languages.map(({ name }: any) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
+    <div key={name} className='p-3 bg-gray-500/10 w-80 h-auto rounded-lg'>
+      <p className='text-5xl'>{emoji}</p>
+      <p className='text-lg font-semibold'>{name}</p>
+      <p className='text-sm text-gray-400'>{capital}</p>
+      <p className='mt-2 font-medium'>Languages spoken:</p>
+      <p>{languages.map(({ name }: any) => name).join(', ')}</p>
     </div>
   ));
 }
