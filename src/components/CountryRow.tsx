@@ -9,7 +9,7 @@ function CountryRow (country: Country) {
       {country.languages && country.languages.length > 0 ?
         <>
           <p className='mt-2 font-medium'>Languages spoken:</p> 
-          <p>{country.languages.map(({ name }: any) => name).join(', ')}</p>
+          <p>{country.languages.map(({ name }: { name: string }) => name).join(', ')}</p>
         </> : ''
       }
     </div>
