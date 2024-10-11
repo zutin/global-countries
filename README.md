@@ -1,7 +1,9 @@
 # Global Countries
-
 This is a simple project that uses the [TrevorBlades GraphQL Countries](https://countries.trevorblades.com/graphql) to display a list of countries and their details.
-It is based on [Rebase](https://rebase.com.br/) React iniative, designed to help their developers improve their front-end skills.
+
+![Screenshot from 2024-10-11 15-20-35](https://github.com/user-attachments/assets/9eae0f46-f419-4295-822d-87168193bbf1)
+
+It was based on [Rebase](https://rebase.com.br/)'s React iniative, designed to help their developers improve their front-end skills.
 
 ## Features
 
